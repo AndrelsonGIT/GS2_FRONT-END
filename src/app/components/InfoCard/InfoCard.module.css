@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Metal+Mania&display=swap');
+
+.card{
+
+    color: white;
+    width: 300px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.card h2{
+    font-family: 'Koulen', sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+.cardContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cardContent p{
+    width: 60%;
+}
+
+.card img{
+    width: 35%;
+    height: 20%;
+    max-width: 133px;
+    max-height: 120px;
+}
+
+@media screen and (min-width: 640px){
+    .card{
+        width: 380px;
+    }
+    .cardContent p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .card{
+        width: 480px;
+    }
+    .card h2{
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .card{
+        width: 620px;
+    }
+    .card h2{
+        font-size: 36px;
+    }
+    .cardContent p{
+        font-size: 18px;
+    }
+}

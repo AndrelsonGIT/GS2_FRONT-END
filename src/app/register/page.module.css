@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+.bodyMain{
+    display: flex;
+    height: 100vh;
+    margin-top: 70px;
+    align-items: center;
+    overflow: auto;;
+}
+
+.title{
+    font-family: "Metal Mania", sans-serif;
+    color: #3BB3D9;
+    text-align: center;
+    font-size: 40px;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.input-container {
+    margin-top: 40px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container select {
+    display: block;
+    width: 100%;
+    padding: 25px;
+    font-size: 14px;
+    color: #1a1a1a;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    appearance: none;
+}
+
+.input-container label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    color: #7a7a7a;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-bottom-color: #007bff;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label,
+.input-container select:focus + label,
+.input-container select:not(:placeholder-shown) + label {
+    top: -20px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.editPasswordContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.editPasswordContainer p{
+    cursor: pointer;
+
+}
+
+.editPasswordContainer p:hover{
+    color: #007bff;
+}

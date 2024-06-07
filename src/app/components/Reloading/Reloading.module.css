@@ -1,0 +1,18 @@
+
+.reloadingContainer {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #FBFBFB;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.reloadingText {
+    text-align: center;
+}
+
+.reloadingImage {
+    max-width: 100%;
+}
