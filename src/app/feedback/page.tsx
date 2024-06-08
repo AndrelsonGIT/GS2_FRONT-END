@@ -7,10 +7,9 @@ import styles from "./page.module.css";
 import Header from "@/app/components/header/Header";
 
 interface feedbackRequestData {
-  feedbackType: string;
-  feedbackText: string;
-  feedbackNote: number;
-  feedbackUserEmail?: string;
+  category: string;
+  text: string;
+  grade: number;
 }
 
 const FeedbackPage = () => {
@@ -22,16 +21,10 @@ const FeedbackPage = () => {
     const formData = new FormData(event.currentTarget);
 
     const data: feedbackRequestData = {
-      feedbackType: formData.get('feedbackOption') as string,
-      feedbackText: formData.get('feedback') as string,
-      feedbackNote: parseInt(formData.get('feedbackNote') as string, 10),
+      category: formData.get('feedbackOption') as string,
+      text: formData.get('feedback') as string,
+      grade: parseInt(formData.get('feedbackNote') as string, 10),
     };
-
-    const feedbackUserEmail = formData.get('optionalEmail') as string;
-
-    if (feedbackUserEmail && feedbackUserEmail.trim().length > 0) {
-      data.feedbackUserEmail = feedbackUserEmail;
-    }
 
     try {
       await axios.post(`${API_URL}/feedback`, JSON.stringify(data), {

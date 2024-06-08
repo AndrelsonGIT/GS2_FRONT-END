@@ -1,30 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 .bodyMain{
     display: flex;
     height: 100vh;
-    margin-top: 70px;
     align-items: center;
-    overflow: auto;;
+    overflow: auto;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .title{
     font-family: "Metal Mania", sans-serif;
     color: #3BB3D9;
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .subTitle{
     font-family: "Koulen", sans-serif;
     text-align: center;
-    font-size: 28px;
+    font-size: 40px;
 }
 
 .container {
     max-width: 600px;
     padding: 20px;
     width: 100%;
-    margin: auto;
     background-color: white;
     border-radius: 10px;
 
@@ -86,4 +87,20 @@
 
 .button:hover {
     background-color: #0056b3;
+}
+
+.editPasswordContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.editPasswordContainer p{
+    cursor: pointer;
+
+}
+
+.editPasswordContainer p:hover{
+    color: #007bff;
 }

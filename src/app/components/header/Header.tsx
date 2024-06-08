@@ -7,6 +7,8 @@ const Header = () => {
         <header className={styles.header}>
             <Link href="/"> <h2>Ocean Guardian</h2></Link>
             <ul className={styles.listItems}>
+              <Link href="sendDataOcean">Enviar Dados </Link>
+              <Link href="graphicsInfo">graficos</Link>
               <Link href="/feedback"><li>DAR feedback</li></Link>
               <Link href="/register"><li>Cadastrar-se</li></Link>
               <Link href="/logIn"><li>LogIn</li></Link>

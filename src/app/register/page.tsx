@@ -1,10 +1,9 @@
 "use client";
-import axios, { AxiosResponse } from 'axios';
-import { FormEvent, useState } from 'react';
+import axios, {AxiosResponse} from 'axios';
+import {FormEvent, useState} from 'react';
 import Reloading from '@/app/components/Reloading/Reloading';
 import styles from "./page.module.css";
 import Header from "@/app/components/header/Header";
-import Link from "next/link"
 
 const FormRegister = () => {
   const [isSendingInfo, setIsSendingInfo] = useState<boolean>(false);
@@ -15,11 +14,14 @@ const FormRegister = () => {
     const formData: FormData = new FormData(event.currentTarget);
 
     const data = {
-      fullname: formData.get('fullname') ,
+      fullName: formData.get('fullname') ,
       email: formData.get('email'),
       password: formData.get('password'),
+      houseNumber: formData.get('houseNumber'),
+      cep: formData.get('cep'),
     };
-
+    console.log("chegou aqui")
+    console.log(data)
     try {
       const response: AxiosResponse = await axios.post('http://localhost:8080/user', JSON.stringify(data), {
         headers: {
@@ -44,7 +46,8 @@ const FormRegister = () => {
       <Header/>
       {!isSendingInfo ? (
         <main className={styles.container}>
-          <h2 className={styles.title}>Cadastre-se na Ocean Guardian</h2>
+          <h2 className={styles.title}>Ocean Guardian</h2>
+          <h2 className={styles.subTitle}>Cadastre-se</h2>
           <form onSubmit={handleSubmit} className={styles.container}>
             <div className={styles['input-container']}>
               <input type="text" name="fullname" id="fullname" placeholder=" " required/>
@@ -75,9 +78,7 @@ const FormRegister = () => {
             <button type="submit" className={styles.button}>Inscrever-se</button>
 
           </form>
-          <div className={styles.editPasswordContainer}>
-            <Link href="/editPassword"><p>Esqueceu a senha?</p></Link>
-          </div>
+
         </main>
       ) : (
         <Reloading reloadingText="Enviando dados do seu formulário" navigateTo="/" />
