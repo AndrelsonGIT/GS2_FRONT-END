@@ -19,10 +19,15 @@ const ChangePassword = () => {
     const data = {
       newPassword: formData.get('newPassword')
     }
-
-    try {
+    try{
       await axios.delete('http://localhost:8080/user/oldPassword')
-      const response: AxiosResponse = await axios.patch(API_URL+"/user"+email, JSON.stringify(data), {
+    }
+    catch(error){
+      console.log(error)
+    }
+    try {
+
+      const response: AxiosResponse = await axios.patch(API_URL+"/user/"+email, JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
         },
